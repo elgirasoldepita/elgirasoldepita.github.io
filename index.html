@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misión y Visión</title>
+    <style>
+        .container {
+            display: flex;
+            align-items: center;
+            background-color: #FBCA3D;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .image {
+            flex: 0 0 auto;
+            width: 200px;
+            margin-right: 20px;
+        }
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .content h2 {
+            margin: 0;
+            cursor: pointer;
+        }
+        .mission-content, .vision-content {
+            max-height: 0;
+            overflow: hidden;
+            margin-top: 0;
+            background-color: #fff;
+            padding: 0 10px;
+            border-radius: 5px;
+            transition: max-height 0.5s ease-out, padding 0.5s ease-out, opacity 0.5s ease-out;
+            opacity: 0;
+        }
+        .mission-content.open, .vision-content.open {
+            max-height: 500px; /* Ajusta según la altura esperada del contenido */
+            padding: 10px;
+            opacity: 1;
+            margin-top: 10px;
+        }
+        .title {
+            text-align: center;
+            font-size: 32px;
+            font-family: Comic Sans MS;
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .image {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+            .title {
+                font-size: 24px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="image">
+        <img src="https://pitaysusgirasoles.org/wp-content/uploads/2024/07/2jUoGZFKbG4X9qLJDnOQF72nrAp.svg" alt="Logo" style="width: 100%;">
+    </div>
+    <div class="content">
+        <div class="title" onclick="toggleMissionContent()">
+            <h2 class="title">Misión</h2>
+        </div>
+    </div>
+</div>
+<div class="mission-content" id="missionContent">
+    <p>Nuestra misión es proporcionar educación de alta calidad y fomentar el desarrollo integral de nuestros estudiantes a través de valores y principios éticos sólidos.</p>
+</div>
+
+<div class="container">
+    <div class="image">
+        <img src="https://pitaysusgirasoles.org/wp-content/uploads/2024/07/2jUoBPyfM2Q1aTEC1fs70ponyDN.svg" alt="Logo" style="width: 100%;">
+    </div>
+    <div class="content">
+        <div class="title" onclick="toggleVisionContent()">
+            <h2 class="title">Visión</h2>
+        </div>
+    </div>
+</div>
+<div class="vision-content" id="visionContent">
+    <p>Convertir nuestro mundo en un gigantesco punto amarillo en donde se vea reflejada una mejora en: la educación, la convivencia, los valores y el medio ambiente.</p>
+</div>
+
+<script>
+    function toggleMissionContent() {
+        var content = document.getElementById('missionContent');
+        if (content.classList.contains('open')) {
+            content.classList.remove('open');
+        } else {
+            content.classList.add('open');
+        }
+    }
+
+    function toggleVisionContent() {
+        var content = document.getElementById('visionContent');
+        if (content.classList.contains('open')) {
+            content.classList.remove('open');
+        } else {
+            content.classList.add('open');
+        }
+    }
+</script>
+
+</body>
+</html>
